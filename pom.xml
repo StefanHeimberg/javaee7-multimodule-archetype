@@ -44,6 +44,10 @@
     </scm>
     
     <properties>
+        <!-- maven default properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <!-- dependency versions -->
         <archetype.version>2.3</archetype.version>
     </properties>
     

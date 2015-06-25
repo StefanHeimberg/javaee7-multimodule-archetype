@@ -5,15 +5,15 @@
 	
     <modelVersion>4.0.0</modelVersion>
 	
-    <groupId>${groupId}</groupId>
+    <groupId>org.example.petstore</groupId>
     <artifactId>bom</artifactId>
-    <version>${version}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     
-    <name>${projectName} - BOM</name>
+    <name>PetStore - BOM</name>
     
     <properties>
-        <${rootArtifactId}.version>${version}</${rootArtifactId}.version>
+        <petstore.version>1.0.0-SNAPSHOT</petstore.version>
     </properties>
     
 </project>
