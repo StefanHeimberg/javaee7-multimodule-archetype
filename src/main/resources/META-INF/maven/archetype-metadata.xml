@@ -30,7 +30,13 @@
     <modules>
         <module id="parent" dir="parent">
             <modules>
-                <module id="${rootArtifactId}-test" dir="__rootArtifactId__-test" />
+                <module id="${rootArtifactId}-test" dir="__rootArtifactId__-test">
+                    <fileSets>
+                        <fileSet filtered="true" encoding="UTF-8">
+                            <directory>src/main/resources</directory>
+                        </fileSet>
+                    </fileSets>
+                </module>
                 
                 <module id="${rootArtifactId}-common" dir="__rootArtifactId__-common" />
                 

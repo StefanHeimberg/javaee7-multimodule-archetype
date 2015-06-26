@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration name="Patek" status="warn">
+    
+    <Appenders>
+        <Console name="CONSOLE_LOG" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        
+        <Async name="AsyncCONSOLE_LOG">
+            <AppenderRef ref="CONSOLE_LOG"/>
+        </Async>
+    </Appenders>
+    
+    <Loggers>
+        <Logger name="${package}" level="debug" />
+        
+        <Root level="warn">
+            <AppenderRef ref="AsyncCONSOLE_LOG" />
+        </Root>
+    </Loggers>
+    
+</Configuration>
