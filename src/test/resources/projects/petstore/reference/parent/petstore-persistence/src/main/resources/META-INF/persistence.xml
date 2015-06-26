@@ -4,8 +4,8 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
     
-    <persistence-unit name="petstore" transaction-type="JTA">
-        <jta-data-source>jdbc/petstoreDS</jta-data-source>
+    <persistence-unit name="${rootArtifactId}" transaction-type="JTA">
+        <jta-data-source>jdbc/${rootArtifactId}DS</jta-data-source>
         <validation-mode>CALLBACK</validation-mode>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="create-or-extend-tables"/>

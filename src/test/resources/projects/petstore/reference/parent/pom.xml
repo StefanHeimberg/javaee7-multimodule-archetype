@@ -37,12 +37,16 @@
         <ejb.generateClient>true</ejb.generateClient>
         <failOnMissingWebXml>false</failOnMissingWebXml>
         <maven.ear.duplicateArtifactsBreakTheBuild>true</maven.ear.duplicateArtifactsBreakTheBuild>
-        <skipITs>true</skipITs>
+        <!-- INFO: If you have a build server (nightly build or something else) then you
+        can skip this by default, and enable ITs on your build environment -->
+        <!-- skipITs>true</skipITs -->
         
         <!-- dependency versions -->
         <javaee.version>7.0</javaee.version>
         <log4j2.version>2.3</log4j2.version>
         <disruptor.version>3.3.2</disruptor.version>
+        <eclipselink.version>2.5.2</eclipselink.version>
+        <derby.version>10.11.1.1</derby.version>
         <junit.version>4.12</junit.version>
         <mockito.version>1.10.19</mockito.version>
         <dbunit.version>2.5.1</dbunit.version>
@@ -77,6 +81,23 @@
             </dependency>
             
             <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>eclipselink</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.persistence</groupId>
+                <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+                <version>${eclipselink.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derby</artifactId>
+                <version>${derby.version}</version>
+            </dependency>
+            
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
@@ -108,6 +129,14 @@
                             <goals>
                                 <goal>integration-test</goal>
                             </goals>
+                            <configuration>
+                                <systemProperties>
+                                    <property>
+                                        <name>derby.stream.error.file</name>
+                                        <value>target/derby.log</value>
+                                    </property>
+                                </systemProperties>
+                            </configuration>
                         </execution>
                         <execution>
                             <id>verify</id>
