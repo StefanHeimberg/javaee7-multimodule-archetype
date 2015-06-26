@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>org.example.petstore</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>petstore-application</artifactId>
+    <packaging>ear</packaging>
+
+    <name>PetStore - Application</name>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.example.petstore</groupId>
+            <artifactId>petstore-business</artifactId>
+            <type>ejb</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.example.petstore</groupId>
+            <artifactId>petstore-web</artifactId>
+            <type>war</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.example.petstore</groupId>
+            <artifactId>petstore-rest</artifactId>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <modules>
+                        <ejbModule>
+                            <groupId>org.example.petstore</groupId>
+                            <artifactId>petstore-business</artifactId>
+                        </ejbModule>
+                        <webModule>
+                            <groupId>org.example.petstore</groupId>
+                            <artifactId>petstore-web</artifactId>
+                        </webModule>
+                        <webModule>
+                            <groupId>org.example.petstore</groupId>
+                            <artifactId>petstore-rest</artifactId>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>

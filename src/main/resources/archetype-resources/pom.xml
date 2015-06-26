@@ -1,3 +1,4 @@
+#set( $symbol_dollar = '$' )
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -12,8 +13,82 @@
     
     <name>${projectName} - BOM</name>
     
+    <modules>
+        <module>parent</module>
+    </modules>
+    
     <properties>
         <${rootArtifactId}.version>${version}</${rootArtifactId}.version>
     </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-test</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-common</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-persistence</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-business</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-business</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+                <type>ejb</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-web</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-web</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+                <type>war</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-rest</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-rest</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+                <type>war</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-application</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-application</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+                <type>ear</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     
 </project>

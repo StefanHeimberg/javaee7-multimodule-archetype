@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>${groupId}</groupId>
+        <artifactId>parent</artifactId>
+        <version>${version}</version>
+    </parent>
+    
+    <artifactId>${artifactId}</artifactId>
+    <packaging>ear</packaging>
+
+    <name>${projectName} - Application</name>
+    
+    <dependencies>
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-business</artifactId>
+            <type>ejb</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-web</artifactId>
+            <type>war</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-rest</artifactId>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <modules>
+                        <ejbModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-business</artifactId>
+                        </ejbModule>
+                        <webModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-web</artifactId>
+                        </webModule>
+                        <webModule>
+                            <groupId>${groupId}</groupId>
+                            <artifactId>${rootArtifactId}-rest</artifactId>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>

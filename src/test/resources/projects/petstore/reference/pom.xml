@@ -12,8 +12,82 @@
     
     <name>PetStore - BOM</name>
     
+    <modules>
+        <module>parent</module>
+    </modules>
+    
     <properties>
         <petstore.version>1.0.0-SNAPSHOT</petstore.version>
     </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-test</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-common</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-persistence</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-business</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-business</artifactId>
+                <version>${petstore.version}</version>
+                <type>ejb</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-web</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-web</artifactId>
+                <version>${petstore.version}</version>
+                <type>war</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-rest</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-rest</artifactId>
+                <version>${petstore.version}</version>
+                <type>war</type>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-application</artifactId>
+                <version>${petstore.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-application</artifactId>
+                <version>${petstore.version}</version>
+                <type>ear</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     
 </project>
