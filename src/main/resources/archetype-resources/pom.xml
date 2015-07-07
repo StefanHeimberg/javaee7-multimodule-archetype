@@ -40,6 +40,12 @@
                 <artifactId>${rootArtifactId}-persistence</artifactId>
                 <version>${symbol_dollar}{${rootArtifactId}.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-persistence</artifactId>
+                <version>${symbol_dollar}{${rootArtifactId}.version}</version>
+                <type>ejb</type>
+            </dependency>
             
             <dependency>
                 <groupId>${groupId}</groupId>

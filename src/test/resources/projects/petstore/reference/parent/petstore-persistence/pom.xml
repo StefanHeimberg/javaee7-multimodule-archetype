@@ -11,7 +11,7 @@
     </parent>
     
     <artifactId>petstore-persistence</artifactId>
-    <packaging>jar</packaging>
+    <packaging>ejb</packaging>
 
     <name>PetStore - Persistence</name>
     

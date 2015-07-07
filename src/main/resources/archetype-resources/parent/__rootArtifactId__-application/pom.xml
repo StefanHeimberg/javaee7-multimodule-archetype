@@ -18,6 +18,12 @@
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-persistence</artifactId>
+            <type>ejb</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-business</artifactId>
             <type>ejb</type>
         </dependency>
@@ -34,29 +40,5 @@
             <type>war</type>
         </dependency>
     </dependencies>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-ear-plugin</artifactId>
-                <configuration>
-                    <modules>
-                        <ejbModule>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${rootArtifactId}-business</artifactId>
-                        </ejbModule>
-                        <webModule>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${rootArtifactId}-web</artifactId>
-                        </webModule>
-                        <webModule>
-                            <groupId>${groupId}</groupId>
-                            <artifactId>${rootArtifactId}-rest</artifactId>
-                        </webModule>
-                    </modules>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     
 </project>

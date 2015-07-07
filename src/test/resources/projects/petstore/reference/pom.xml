@@ -39,6 +39,12 @@
                 <artifactId>petstore-persistence</artifactId>
                 <version>${petstore.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.example.petstore</groupId>
+                <artifactId>petstore-persistence</artifactId>
+                <version>${petstore.version}</version>
+                <type>ejb</type>
+            </dependency>
             
             <dependency>
                 <groupId>org.example.petstore</groupId>

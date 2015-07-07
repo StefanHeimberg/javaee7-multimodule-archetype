@@ -18,6 +18,12 @@
     <dependencies>
         <dependency>
             <groupId>org.example.petstore</groupId>
+            <artifactId>petstore-persistence</artifactId>
+            <type>ejb</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.example.petstore</groupId>
             <artifactId>petstore-business</artifactId>
             <type>ejb</type>
         </dependency>
@@ -34,29 +40,5 @@
             <type>war</type>
         </dependency>
     </dependencies>
-    
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-ear-plugin</artifactId>
-                <configuration>
-                    <modules>
-                        <ejbModule>
-                            <groupId>org.example.petstore</groupId>
-                            <artifactId>petstore-business</artifactId>
-                        </ejbModule>
-                        <webModule>
-                            <groupId>org.example.petstore</groupId>
-                            <artifactId>petstore-web</artifactId>
-                        </webModule>
-                        <webModule>
-                            <groupId>org.example.petstore</groupId>
-                            <artifactId>petstore-rest</artifactId>
-                        </webModule>
-                    </modules>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
     
 </project>

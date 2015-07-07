@@ -11,7 +11,7 @@
     </parent>
     
     <artifactId>${artifactId}</artifactId>
-    <packaging>jar</packaging>
+    <packaging>ejb</packaging>
 
     <name>${projectName} - Persistence</name>
     
