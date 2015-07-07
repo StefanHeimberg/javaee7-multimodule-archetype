@@ -78,9 +78,6 @@
                                 <include>**/*.java</include>
                             </includes>
                         </fileSet>
-                        <fileSet filtered="true" encoding="UTF-8">
-                            <directory>src/test/resources</directory>
-                        </fileSet>
                     </fileSets>
                 </module>
                 

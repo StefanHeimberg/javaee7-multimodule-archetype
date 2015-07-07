@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.example.petstore.persistence;
+package ${package}.persistence;
 
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +29,7 @@ import org.apache.logging.log4j.Logger;
  * @author Stefan Heimberg <kontakt@stefanheimberg.ch>
  */
 @Stateless
-public class MyEntityDAO {
+public class MyEntityRepository {
     
     private static final Logger LOG = LogManager.getLogger();
     

@@ -21,7 +21,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.example.petstore.persistence.MyEntity;
-import org.example.petstore.persistence.MyEntityDAO;
+import org.example.petstore.persistence.MyEntityRepository;
 
 /**
  *
@@ -34,10 +34,10 @@ public class MyService {
     private EntityManager em;
     
     @EJB
-    private MyEntityDAO myEntityDAO;
+    private MyEntityRepository myEntityRepository;
 
     public List<MyEntity> findAll() {
-        return myEntityDAO.findAll();
+        return myEntityRepository.findAll();
     }
 
     public MyEntity findById(final Long id) {

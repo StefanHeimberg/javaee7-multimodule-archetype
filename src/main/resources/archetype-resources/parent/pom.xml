@@ -50,6 +50,7 @@
         <junit.version>4.12</junit.version>
         <mockito.version>1.10.19</mockito.version>
         <dbunit.version>2.5.1</dbunit.version>
+        <cdi-unit.version>3.1.1</cdi-unit.version>
         
         <!-- plugin versions -->
         <maven-failsafe-plugin.version>2.18.1</maven-failsafe-plugin.version>
@@ -114,6 +115,12 @@
                 <artifactId>dbunit</artifactId>
                 <version>${dbunit.version}</version>
             </dependency>
+            
+            <dependency>
+                <groupId>org.jglue.cdi-unit</groupId>
+                <artifactId>cdi-unit</artifactId>
+                <version>${cdi-unit.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -171,11 +178,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-        </plugins>
     </build>
     
 </project>
